@@ -8,18 +8,18 @@ on:
 
   workflow_dispatch:
 
-  jobs:
-    sast:
-      runs-on: ubuntu-latest
+jobs:
+  sast:
+    runs-on: ubuntu-latest
 
-      steps:
-        - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-        - name: Bandit Security Scan
-          uses: libertyy/py3-bandit-check@v2
+      - name: Bandit Security Scan
+        uses: libertyy/py3-bandit-check@v2
 
-        - name: Security Scan Report
-          uses: actions/upload-artifact@v2
-          with:
-            name: Security Report
-            path: ${{ RUNNER.temp }}/_github_home/bandit_report.out
+      - name: Security Scan Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Security Report
+          path: ${{ RUNNER.temp }}/_github_home/bandit_report.out
