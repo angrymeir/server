@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: [ security-demonstration ]
-  pull_requests:
+  pull_request:
     branches: [ security-demonstration ]
 
   workflow_dispatch:
