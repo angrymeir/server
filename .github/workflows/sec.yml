@@ -8,7 +8,7 @@ on:
 
   workflow_dispatch:
 
-  job:
+  jobs:
     sast:
       runs-on: ubuntu-latest
 
