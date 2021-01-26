@@ -19,7 +19,7 @@ jobs:
         uses: libertyy/py3-bandit-check@v2
 
       - name: Security Scan Report
+        if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
-          name: Security Report
           path: ${{ RUNNER.temp }}/_github_home/bandit_report.out
