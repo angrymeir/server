@@ -23,3 +23,22 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: ${{ RUNNER.temp }}/_github_home/bandit_report.out
+          
+  
+  3rd-party:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Self dep-scan
+        uses: AppThreat/dep-scan-action@master
+        env:
+          VDB_HOME: ${{ github.workspace }}/db
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload scan reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: sast-scan-reports
+          path: reports
