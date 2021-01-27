@@ -25,7 +25,7 @@ jobs:
           path: ${{ RUNNER.temp }}/_github_home/bandit_report.out
           
   
-  3rd-party:
+  third-party:
     runs-on: ubuntu-latest
 
     steps:
