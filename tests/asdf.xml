@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="0.167" timestamp="2021-01-29T14:41:08.032394" hostname="angrymac"><testcase classname="test_sample" name="test_secret_from_file_success" time="0.001" /><testcase classname="test_sample" name="test_secret_from_file_fail" time="0.001"><failure message="AssertionError: assert 'asdfakshjdfaksjdhf' != 'asdfakshjdfaksjdhf'&#10; +  where 'asdfakshjdfaksjdhf' = write_to_file('secret.txt')&#10; +  and   'asdfakshjdfaksjdhf' = get_secret_from_file('secret.txt')">def test_secret_from_file_fail():
+&gt;       assert write_to_file(path) != get_secret_from_file(path)
+E       AssertionError: assert 'asdfakshjdfaksjdhf' != 'asdfakshjdfaksjdhf'
+E        +  where 'asdfakshjdfaksjdhf' = write_to_file('secret.txt')
+E        +  and   'asdfakshjdfaksjdhf' = get_secret_from_file('secret.txt')
+
+test_sample.py:20: AssertionError</failure></testcase></testsuite></testsuites>
