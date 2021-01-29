@@ -32,8 +32,9 @@ jobs:
       - name: CycloneDX Python Generate SBOM
         uses: CycloneDX/gh-python-generate-sbom@v1.0.0
       - name: Debug
-        shell: |
+        run: |
           ls -la
+          pwd
       - name: 3rd Party Inventory
         if: ${{ always() }}
         uses: actions/upload-artifact@v2
