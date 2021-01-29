@@ -26,19 +26,13 @@ jobs:
           
   
   third-party:
-    runs-on: ubuntu-latest
-
+    runs-on: macos-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Self dep-scan
-        uses: AppThreat/dep-scan-action@master
-        env:
-          VDB_HOME: ${{ github.workspace }}/db
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload scan reports
+      - name: CycloneDX Python Generate SBOM
+        uses: CycloneDX/gh-python-generate-sbom@v1.0.0
+      - name: 3rd Party Inventory
         if: ${{ always() }}
-        uses: actions/upload-artifact@v1.0.0
+        uses: actions/upload-artifact@v2
         with:
-          name: sast-scan-reports
-          path: reports
+          path: ./bom.xml
