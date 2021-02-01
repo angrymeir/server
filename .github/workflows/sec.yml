@@ -56,4 +56,4 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
-          path: ./unit-test.xml
+          path: ./tests/unit-test.xml
