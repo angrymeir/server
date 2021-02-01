@@ -45,6 +45,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Unit Test with pytest
-        uses: fylein/python-pytest-github-action@v1
-        with:
-          args: pip3 install -r requirements.txt && cd tests && pytest --junit-xml=unit-test.xml
+        run: |
+          pip3 install -r requirements.txt
+          pip3 install pytest
+          cd tests
+          pytest --junit-xml=unit-test.xml
+          ls -la
