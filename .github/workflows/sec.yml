@@ -52,4 +52,8 @@ jobs:
           pip3 install pytest
           cd tests
           pytest --junit-xml=unit-test.xml
-          ls -la
+      - name: Unit Test Results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          path: ./unit-test.xml
