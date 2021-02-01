@@ -28,6 +28,6 @@ jobs:
         run: |
           git remote add upstream https://github.com/etesync/server.git
           git remote -v
-          git checkout master
           git fetch upstream
+          git checkout master
           git merge upstream/master
